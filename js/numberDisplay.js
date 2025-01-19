@@ -10,15 +10,11 @@ const setCustomPoint = (input) => {
 };
 
 const addCustomPoint = () => {
-    calculate(custom_points);
+  calculate(custom_points);
 };
 const reduceCustomPoint = () => {
-    calculate(-custom_points);
+  calculate(-custom_points);
 };
-
-// setInterval(() => {
-//     reduceNUmber(digits[digits.length-1],digits.length-1);
-// }, 1000);
 
 const calculate = (amount) => {
   total += amount;
@@ -33,7 +29,7 @@ const calculate = (amount) => {
         clearInterval(interval);
       }
     }, 1000 / Math.abs(amount));
-  }else{
+  } else {
     let count = 0;
     const interval = setInterval(() => {
       if (count < Math.abs(amount)) {
@@ -81,7 +77,7 @@ const reduceNUmber = (digit, num) => {
     });
   }, 1000);
 
-  if (Number(divs[divs.length - 1].innerText) == 1) {
+  if (Number(divs[divs.length - 1].innerText) == 0) {
     reduceNUmber(digits[num - 1], num - 1);
   }
 };

@@ -1,8 +1,19 @@
 const digits = document.querySelectorAll('.digit');
 
-setInterval(() => {
-    reduceNUmber(digits[digits.length-1],digits.length-1);
-}, 1000);
+let total = 0;
+
+// setInterval(() => {
+//     reduceNUmber(digits[digits.length-1],digits.length-1);
+// }, 1000);
+
+const calculate = (amount) => {
+    if(amount>0){
+        addNUmber(digits[digits.length-1],digits.length-1);
+    }else{
+        reduceNUmber(digits[digits.length-1],digits.length-1);
+    }
+}
+
 
 const addNUmber = (digit,num)=>{
     const divs = digit.querySelectorAll('span');

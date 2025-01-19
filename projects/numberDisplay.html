@@ -12,19 +12,33 @@
       <a href="../index.html"><div class="back_button"></div></a>
       Number Display
     </nav>
-    <div class="number_display_container">
-        <div class="digit">
-          <span class="new">9</span>
+    <div class="center">
+      <div class="number_display_container">
+          <div class="digit">
+            <span class="new">0</span>
+          </div>
+          <div class="digit">
+            <span class="new">0</span>
+          </div>
+          <div class="digit">
+            <span class="new">0</span>
+          </div>
+          <div class="digit">
+            <span class="new">0</span>
+          </div>
+      </div>
+  
+      <div class="control_box">
+        <div class="quick_button">
+          <button onclick="calculate(10)">➕ Ten points</butto>
+          <button onclick="calculate(-10)">➖ Ten Points</button>
         </div>
-        <div class="digit">
-          <span class="new">9</span>
+        <div class="custom_points">
+          <button>➖ Points</button>
+          <input type="number" placeholder="Enter Points" class="custom_amount"/>
+          <button>➕ Points</button>
         </div>
-        <div class="digit">
-          <span class="new">9</span>
-        </div>
-        <div class="digit">
-          <span class="new">9</span>
-        </div>
+      </div>
     </div>
     <script src="../js/numberDisplay.js"></script>
   </body>

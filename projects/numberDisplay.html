@@ -18,7 +18,7 @@
             <span class="new">0</span>
           </div>
           <div class="digit">
-            <span class="new">0</span>
+            <span class="new">5</span>
           </div>
           <div class="digit">
             <span class="new">0</span>
@@ -34,9 +34,9 @@
           <button onclick="calculate(-10)">➖ Ten Points</button>
         </div>
         <div class="custom_points">
-          <button>➖ Points</button>
-          <input type="number" placeholder="Enter Points" class="custom_amount"/>
-          <button>➕ Points</button>
+          <button onclick="reduceCustomPoint()">➖ Points</button>
+          <input type="number" placeholder="Enter Points" class="custom_amount" onchange="setCustomPoint(this)"/>
+          <button onclick="addCustomPoint()"">➕ Points</button>
         </div>
       </div>
     </div>

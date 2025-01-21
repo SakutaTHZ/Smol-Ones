@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slow Scroll Panel</title>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      .image-track > img {
+        width: 50vmin;
+        height: 60vmin;
+        object-fit: cover;
+        object-position: 100% 50%;
+        border-radius: 2em;
+        transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .image-track > img:hover {
+        cursor: pointer;
+      }
+      .image-track {
+        display: flex;
+        gap: 2vmin;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-15%, -50%);
+        transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+    </style>
+  </head>
+  <body class="prototype_bg">
+    <div class="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+        <img class="image" src="../images/Nami.jpg" draggable="false" />
+        <img class="image" src="../images/MissFortune.jpg" draggable="false" />
+        <img class="image" src="../images/Syndra.jpg" draggable="false" />
+        <img class="image" src="../images/Morgana.jpg" draggable="false" />
+        <img class="image" src="../images/Jhin.jpg" draggable="false" />
+        <img class="image" src="../images/Yasuo.jpg" draggable="false" />
+      <img class="image" src="../images/Seraphine.jpg" draggable="false" />
+      <img class="image" src="../images/Ahri.jpg" draggable="false" />
+      <img class="image" src="../images/Mel.jpg" draggable="false" />
+      <img class="image" src="../images/Pyke.jpg" draggable="false" />
+    </div>
+
+    <script>
+      const track = document.querySelector(".image-track");
+      window.onmousedown = (e) => {
+        track.dataset.mouseDownAt = e.clientX;
+      };
+      window.onmouseup = (e) => {
+        track.dataset.mouseDownAt = "0";
+        track.dataset.prevPercentage = track.dataset.percentage;
+      };
+      window.onmousemove = (e) => {
+        if (track.dataset.mouseDownAt === "0") return;
+        const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+          maxDelta = window.innerWidth / 2;
+        const percentage = (mouseDelta / maxDelta) * -100,
+          nextPercentage = Math.max(
+            Math.min(
+              parseFloat(track.dataset.prevPercentage) + percentage,
+              -15
+            ),
+            -85
+          );
+        track.dataset.percentage = nextPercentage;
+        track.animate(
+          {
+            transform: `translate(${nextPercentage}%,-50%)`,
+          },
+          { duration: 1200, fill: "forwards" }
+        );
+
+        for (const image of track.querySelectorAll(".image")) {
+          image.animate(
+            {
+              objectPosition: `${nextPercentage + 100}% 50%`,
+            },
+            { duration: 1200, fill: "forwards" }
+          );
+        }
+      };
+    </script>
+  </body>
+</html>

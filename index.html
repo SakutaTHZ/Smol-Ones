@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Projects</title>
-</head>
-<body class="prototype_bg">
-    <div class="projects_container">
-         <a href="projects/numberDisplay.html">Number Display</a>
-         <a href="projects/slowScrollPanel.html">Slow Scroll Panel</a>
+  </head>
+  <body class="prototype_bg">
+    <div class="transition">
+      <div class="transition-row row-1">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
+      <div class="transition-row row-2">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
     </div>
 
+    <div class="app">
+      <nav>
+        <a href="../index.html"><div class="back_button"></div></a>
+        Home
+      </nav>
+      <div class="projects_container">
+        <a href="projects/numberDisplay.html">Number Display</a>
+        <a href="projects/slowScrollPanel.html">Slow Scroll Panel</a>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/transition.js"></script>
     <script src="js/numberDisplay.js"></script>
-</body>
+  </body>
 </html>

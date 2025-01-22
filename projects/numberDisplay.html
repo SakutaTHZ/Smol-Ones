@@ -8,38 +8,60 @@
     <link rel="stylesheet" href="../css/numberDisplay.css" />
   </head>
   <body class="prototype_bg">
-    <nav>
-      <a href="../index.html"><div class="back_button"></div></a>
-      Number Display
-    </nav>
-    <div class="center">
-      <div class="number_display_container">
-          <div class="digit">
-            <span class="new">0</span>
-          </div>
-          <div class="digit">
-            <span class="new">5</span>
-          </div>
-          <div class="digit">
-            <span class="new">0</span>
-          </div>
-          <div class="digit">
-            <span class="new">0</span>
-          </div>
+    
+    <div class="transition">
+      <div class="transition-row row-1">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
       </div>
-  
-      <div class="control_box">
-        <div class="quick_button">
-          <button onclick="calculate(10)">➕ Ten points</butto>
-          <button onclick="calculate(-10)">➖ Ten Points</button>
+      <div class="transition-row row-2">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
+    </div>
+
+    <div class="app">
+      <nav>
+        <a href="../index.html"><div class="back_button"></div></a>
+        Number Display
+      </nav>
+      <div class="center">
+        <div class="number_display_container">
+            <div class="digit">
+              <span class="new">0</span>
+            </div>
+            <div class="digit">
+              <span class="new">5</span>
+            </div>
+            <div class="digit">
+              <span class="new">0</span>
+            </div>
+            <div class="digit">
+              <span class="new">0</span>
+            </div>
         </div>
-        <div class="custom_points">
-          <button onclick="reduceCustomPoint()">➖ Points</button>
-          <input type="number" placeholder="Enter Points" class="custom_amount" onchange="setCustomPoint(this)"/>
-          <button onclick="addCustomPoint()"">➕ Points</button>
+    
+        <div class="control_box">
+          <div class="quick_button">
+            <button onclick="calculate(10)">➕ Ten points</butto>
+            <button onclick="calculate(-10)">➖ Ten Points</button>
+          </div>
+          <div class="custom_points">
+            <button onclick="reduceCustomPoint()">➖ Points</button>
+            <input type="number" placeholder="Enter Points" class="custom_amount" onchange="setCustomPoint(this)"/>
+            <button onclick="addCustomPoint()"">➕ Points</button>
+          </div>
         </div>
       </div>
     </div>
-    <script src="../js/numberDisplay.js"></script>
+    <script src="../js/numberDisplay.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="../js/transition.js"></script>
   </body>
 </html>

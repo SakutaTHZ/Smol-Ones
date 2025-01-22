@@ -30,17 +30,40 @@
     </style>
   </head>
   <body class="prototype_bg">
-    <div class="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+    <div class="transition">
+      <div class="transition-row row-1">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
+      <div class="transition-row row-2">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
+    </div>
+
+    <div class="app">
+      <nav>
+        <a href="../index.html"><div class="back_button"></div></a>
+        Slow Scroll Panel
+      </nav>
+      <div class="image-track" data-mouse-down-at="0" data-prev-percentage="0">
         <img class="image" src="../images/Nami.jpg" draggable="false" />
         <img class="image" src="../images/MissFortune.jpg" draggable="false" />
         <img class="image" src="../images/Syndra.jpg" draggable="false" />
         <img class="image" src="../images/Morgana.jpg" draggable="false" />
         <img class="image" src="../images/Jhin.jpg" draggable="false" />
         <img class="image" src="../images/Yasuo.jpg" draggable="false" />
-      <img class="image" src="../images/Seraphine.jpg" draggable="false" />
-      <img class="image" src="../images/Ahri.jpg" draggable="false" />
-      <img class="image" src="../images/Mel.jpg" draggable="false" />
-      <img class="image" src="../images/Pyke.jpg" draggable="false" />
+        <img class="image" src="../images/Seraphine.jpg" draggable="false" />
+        <img class="image" src="../images/Ahri.jpg" draggable="false" />
+        <img class="image" src="../images/Mel.jpg" draggable="false" />
+        <img class="image" src="../images/Pyke.jpg" draggable="false" />
+      </div>
     </div>
 
     <script>
@@ -82,5 +105,7 @@
         }
       };
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="../js/transition.js"></script>
   </body>
 </html>
